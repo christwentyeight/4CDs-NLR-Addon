@@ -50,3 +50,4 @@ Contributors names and contact info
 
 ![!nlrver command](https://i.imgur.com/jFXYzih.png)
 ![NLR Zone](https://i.imgur.com/XrwXd1p.jpg)
+![NLR Text](https://i.imgur.com/SkEljaW.png)
