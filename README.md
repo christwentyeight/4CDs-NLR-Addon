@@ -48,5 +48,5 @@ Contributors names and contact info
 
 ### Images
 
-![!nlrver command](https://imgur.com/a/5GynksE)
-![NLR Zone](https://imgur.com/a/6u3i1ST)
+![!nlrver command](https://i.imgur.com/jFXYzih.png)
+![NLR Zone](https://i.imgur.com/XrwXd1p.jpg)
