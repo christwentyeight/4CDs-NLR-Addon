@@ -1,4 +1,4 @@
-local addonVersion = "1.0"
+local addonVersion = "0.1"
 
 concommand.Add("nlrver", function(ply)
     if IsValid(ply) then

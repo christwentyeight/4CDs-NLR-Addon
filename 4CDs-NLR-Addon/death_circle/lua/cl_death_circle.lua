@@ -1,11 +1,17 @@
 local deathCircles = {}  -- Array to store all death circles
 local circleCooldowns = {}  -- Array to store cooldowns for each death circle
-local circleRadius = 200  -- Radius of the circle
 local cooldownDuration = 10  -- Cooldown duration in seconds
 local maxDeathCount = 3  -- Deaths before "taking action"
+
+local circleColor = Color(255, 0, 0, 150)  -- Colour of the circle
+local circleRadius = 200  -- Radius of the circle
+local removalDuration = 180  -- Duration after which the circle is removed
+
+local textFont = "Trebuchet24"  -- Font of the text
+local textColor = Color(255, 255, 255, 255)  -- Colour of the text
 local textScale = 1  -- Scale of text size
 local textHeight = 40  -- Height above ground for text
-local removalDuration = 180  -- Duration after which the circle is removed
+
 
 net.Receive("PlayerDeathCircle", function()
     local pos = net.ReadVector()
@@ -54,7 +60,7 @@ local function Draw3DCircle(pos, radius, color, zoneNumber)
     local textY = textPos:ToScreen().y - textHeight / 2
 
     cam.Start3D2D(textPos, Angle(0, LocalPlayer():EyeAngles().y - 90, 90), textScale)
-        draw.DrawText(text, "Trebuchet24", 0, 0, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
+        draw.DrawText(text, textFont, 0, 0, textColor, TEXT_ALIGN_CENTER)
     cam.End3D2D()
 end
 
@@ -64,7 +70,6 @@ hook.Add("PostDrawTranslucentRenderables", "DrawDeathCircles", function()
             table.remove(deathCircles, i)
             table.remove(circleCooldowns, i)
         else
-            local circleColor = Color(255, 0, 0, 150)
             Draw3DCircle(data.pos, circleRadius, circleColor, i)
         end
     end
@@ -98,7 +103,7 @@ hook.Add("HUDPaint", "DrawCountdown", function()
         local remainingTime = removalDuration - (CurTime() - data.time)
         if cooldown > 0 then
             local text = "NLR Zone " .. i .. ": Time until action " .. math.ceil(cooldown) .. " / 10. | Remaining: " .. math.ceil(remainingTime) .. " / 180."
-            draw.SimpleText(text, "Trebuchet24", ScrW() / 2, 50 + 25 * i, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+            draw.SimpleText(text, textFont, ScrW() / 2, 50 + 25 * i, textColor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
         end
     end
 end)
