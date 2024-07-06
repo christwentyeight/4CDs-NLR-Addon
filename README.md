@@ -43,11 +43,11 @@ Contributors names and contact info
 
 ### Version History
 
-* 0.1
+* 0.0
     * Initial Release
 
 ### Images
 
-![!nlrver command](https://i.imgur.com/jFXYzih.png)
+![!nlrver command](https://i.imgur.com/kBsGTPP.png)
 ![NLR Zone](https://i.imgur.com/XrwXd1p.jpg)
 ![NLR Text](https://i.imgur.com/SkEljaW.png)
