@@ -1,0 +1,1 @@
+-- Shared script for death_circle addon
